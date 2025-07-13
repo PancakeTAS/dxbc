@@ -1,6 +1,8 @@
 #pragma once
 
-#include "../dxvk/dxvk_device.h"
+#include <vulkan/vulkan.h>
+
+#include "util_flags.h"
 
 namespace dxvk {
 
@@ -16,8 +18,7 @@ namespace dxvk {
   using DxbcFloatControlFlags = Flags<DxbcFloatControlFlag>;
 
   struct DxbcOptions {
-    DxbcOptions();
-    DxbcOptions(const Rc<DxvkDevice>& device, const D3D11Options& options);
+    DxbcOptions() {}
 
     // Clamp oDepth in fragment shaders if the depth
     // clip device feature is not supported
@@ -69,5 +70,5 @@ namespace dxvk {
     /// Minimum storage buffer alignment
     VkDeviceSize minSsboAlignment = 0;
   };
-  
+
 }
