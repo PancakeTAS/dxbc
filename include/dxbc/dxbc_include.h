@@ -1,18 +1,24 @@
 #pragma once
 
-#include "../dxvk/dxvk_shader.h"
+#include <vulkan/vulkan.h>
+#include <spirv/unified1/spirv.hpp>
 
-#include "../util/com/com_guid.h"
-#include "../util/com/com_object.h"
-#include "../util/com/com_pointer.h"
+#include "dxvk_limits.h"
+#include "dxvk_pipelayout.h"
 
-#include "../util/log/log.h"
-#include "../util/log/log_debug.h"
+#include "com/com_guid.h"
+#include "com/com_object.h"
+#include "com/com_pointer.h"
 
-#include "../util/rc/util_rc.h"
-#include "../util/rc/util_rc_ptr.h"
+#include "log/log.h"
+#include "log/log_debug.h"
 
-#include "../util/util_bit.h"
-#include "../util/util_enum.h"
-#include "../util/util_error.h"
-#include "../util/util_string.h"
+#include "rc/util_rc.h"
+#include "rc/util_rc_ptr.h"
+
+#include "util_bit.h"
+#include "util_enum.h"
+#include "util_error.h"
+#include "util_string.h"
+#include "util_flags.h"
+#include "util_small_vector.h"
