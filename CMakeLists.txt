@@ -9,8 +9,7 @@ project(dxbc
     LANGUAGES CXX)
 
 file(GLOB SOURCES
-    "src/spirv/*.cpp"
-    "src/util/*.cpp"
+    "src/dxbc/*.cpp"
 )
 
 add_library(lsfg-vk SHARED ${SOURCES})
@@ -20,6 +19,7 @@ set_target_properties(lsfg-vk PROPERTIES
     CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON)
 target_include_directories(lsfg-vk
+    PUBLIC include/dxbc
     PUBLIC include/spirv include/util
     PUBLIC include/windows)
 set_target_properties(lsfg-vk PROPERTIES
