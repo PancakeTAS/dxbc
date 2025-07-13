@@ -40,7 +40,7 @@ namespace dxvk {
   }
   
   
-  Rc<DxvkShader> DxbcModule::compile(
+  void DxbcModule::compile(
     const DxbcModuleInfo& moduleInfo,
     const std::string&    fileName) {
     if (m_shexChunk == nullptr)
@@ -67,11 +67,11 @@ namespace dxvk {
 
     m_icb = compiler.getIcbData();
 
-    return compiler.finalize();
+    compiler.finalize();
   }
   
   
-  Rc<DxvkShader> DxbcModule::compilePassthroughShader(
+  void DxbcModule::compilePassthroughShader(
     const DxbcModuleInfo& moduleInfo,
     const std::string&    fileName) const {
     if (m_shexChunk == nullptr)
@@ -86,7 +86,7 @@ namespace dxvk {
       m_psgnChunk, analysisInfo);
     
     compiler.processXfbPassthrough();
-    return compiler.finalize();
+    compiler.finalize();
   }
 
 

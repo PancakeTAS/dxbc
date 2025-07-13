@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../dxvk/dxvk_shader.h"
-
 #include "dxbc_chunk_isgn.h"
 #include "dxbc_chunk_shex.h"
 #include "dxbc_header.h"
@@ -91,7 +89,7 @@ namespace dxvk {
      *        the compiled SPIR-V for debugging purposes.
      * \returns The compiled shader object
      */
-    Rc<DxvkShader> compile(
+    void compile(
       const DxbcModuleInfo& moduleInfo,
       const std::string&    fileName);
     
@@ -105,7 +103,7 @@ namespace dxvk {
      * \param [in] moduleInfo DXBC module info
      * \param [in] fileName SPIR-V shader name
      */
-    Rc<DxvkShader> compilePassthroughShader(
+    void compilePassthroughShader(
       const DxbcModuleInfo& moduleInfo,
       const std::string&    fileName) const;
 

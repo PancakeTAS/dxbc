@@ -403,7 +403,7 @@ namespace dxvk {
      * \brief Finalizes the shader
      * \returns The final shader object
      */
-    Rc<DxvkShader> finalize();
+    void finalize();
 
     /**
      * \brief Extracts immediate constant buffer data
