@@ -5,8 +5,6 @@
 #include <sstream>
 #include <vector>
 
-#include "./com/com_include.h"
-
 #include "util_bit.h"
 #include "util_likely.h"
 
@@ -167,7 +165,7 @@ namespace dxvk::str {
    * \param [in] ws Null-terminated wide string
    * \returns Regular string object
    */
-  std::string fromws(const WCHAR* ws);
+  std::string fromws(const wchar_t* ws);
 
   /**
    * \brief Creates wide string object from char array
@@ -188,7 +186,7 @@ namespace dxvk::str {
   inline void format1(std::stringstream&) { }
 
   template<typename... Tx>
-  void format1(std::stringstream& str, const WCHAR *arg, const Tx&... args) {
+  void format1(std::stringstream& str, const wchar_t *arg, const Tx&... args) {
     str << fromws(arg);
     format1(str, args...);
   }

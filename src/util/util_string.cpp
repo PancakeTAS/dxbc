@@ -202,7 +202,7 @@ namespace dxvk::str {
   }
 
 
-  std::string fromws(const WCHAR* ws) {
+  std::string fromws(const wchar_t* ws) {
     size_t srcLen = length(ws);
     size_t dstLen = transcodeString<char>(
       nullptr, 0, ws, srcLen);

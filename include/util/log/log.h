@@ -1,11 +1,7 @@
 #pragma once
 
-#include <array>
-#include <fstream>
-#include <iostream>
+#include <cstdint>
 #include <string>
-
-#include "../thread.h"
 
 namespace dxvk {
   
@@ -17,10 +13,6 @@ namespace dxvk {
     Error = 4,
     None  = 5,
   };
-  
-#ifdef _WIN32
-  using PFN_wineLogOutput = int (__cdecl *)(const char *);
-#endif
 
   /**
    * \brief Logger
@@ -32,41 +24,20 @@ namespace dxvk {
     
   public:
     
-    Logger(const std::string& file_name);
-    ~Logger();
+    Logger() {}
+    Logger(const std::string& file_name) {}
+    ~Logger() {}
     
-    static void trace(const std::string& message);
-    static void debug(const std::string& message);
-    static void info (const std::string& message);
-    static void warn (const std::string& message);
-    static void err  (const std::string& message);
-    static void log  (LogLevel level, const std::string& message);
+    static void trace(const std::string& message) {}
+    static void debug(const std::string& message) {}
+    static void info (const std::string& message) {}
+    static void warn (const std::string& message) {}
+    static void err  (const std::string& message) {}
+    static void log  (LogLevel level, const std::string& message) {}
     
     static LogLevel logLevel() {
-      return s_instance.m_minLevel;
+      return LogLevel::Warn;
     }
-    
-  private:
-    
-    static Logger     s_instance;
-    
-    const LogLevel    m_minLevel;
-    const std::string m_fileName;
-    
-    dxvk::mutex       m_mutex;
-    std::ofstream     m_fileStream;
-
-    bool              m_initialized = false;
-#ifdef _WIN32
-    PFN_wineLogOutput m_wineLogOutput = nullptr;
-#endif
-
-    void emitMsg(LogLevel level, const std::string& message);
-    
-    std::string getFileName(
-      const std::string& base);
-
-    static LogLevel getMinLogLevel();
 
   };
   

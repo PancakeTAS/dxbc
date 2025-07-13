@@ -12,8 +12,6 @@ file(GLOB SOURCES
     "src/dxbc/*.cpp"
     "src/spirv/*.cpp"
     "src/util/*.cpp"
-    "src/util/com/*.cpp"
-    "src/util/log/*.cpp"
 )
 
 add_library(dxbc SHARED ${SOURCES})
@@ -24,7 +22,6 @@ set_target_properties(dxbc PROPERTIES
     CXX_STANDARD_REQUIRED ON)
 target_include_directories(dxbc
     PUBLIC include/dxbc
-    PUBLIC include/spirv include/util include/dxvk
-    PUBLIC include/windows)
+    PUBLIC include/spirv include/util include/dxvk)
 set_target_properties(dxbc PROPERTIES
     EXPORT_COMPILE_COMMANDS ON)

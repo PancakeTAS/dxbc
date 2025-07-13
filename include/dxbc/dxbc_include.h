@@ -6,10 +6,6 @@
 #include "dxvk_limits.h"
 #include "dxvk_pipelayout.h"
 
-#include "com/com_guid.h"
-#include "com/com_object.h"
-#include "com/com_pointer.h"
-
 #include "log/log.h"
 #include "log/log_debug.h"
 

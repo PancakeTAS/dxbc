@@ -7,6 +7,8 @@
 #include "dxbc_reader.h"
 #include "dxbc_util.h"
 
+#include <optional>
+
 // References used for figuring out DXBC:
 // - https://github.com/tgjones/slimshader-cpp
 // - Wine
