@@ -1,4 +1,5 @@
 #include "dxbc_compiler.h"
+#include "spirv_code_buffer.h"
 
 namespace dxvk {
 
@@ -215,7 +216,7 @@ namespace dxvk {
   }
   
   
-  void DxbcCompiler::finalize() {
+  SpirvCodeBuffer DxbcCompiler::finalize() {
     // Depending on the shader type, this will prepare
     // input registers, call various shader functions
     // and write back the output registers.
@@ -238,7 +239,7 @@ namespace dxvk {
       m_programInfo.executionModel(), "main");
     m_module.setDebugName(m_entryPointId, "main");
 
-    m_module.compile();
+    return m_module.compile();
   }
   
   

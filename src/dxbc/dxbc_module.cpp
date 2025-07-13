@@ -40,7 +40,7 @@ namespace dxvk {
   }
   
   
-  void DxbcModule::compile(
+  SpirvCodeBuffer DxbcModule::compile(
     const DxbcModuleInfo& moduleInfo,
     const std::string&    fileName) {
     if (m_shexChunk == nullptr)
@@ -67,11 +67,11 @@ namespace dxvk {
 
     m_icb = compiler.getIcbData();
 
-    compiler.finalize();
+    return compiler.finalize();
   }
   
   
-  void DxbcModule::compilePassthroughShader(
+  SpirvCodeBuffer DxbcModule::compilePassthroughShader(
     const DxbcModuleInfo& moduleInfo,
     const std::string&    fileName) const {
     if (m_shexChunk == nullptr)
@@ -86,7 +86,7 @@ namespace dxvk {
       m_psgnChunk, analysisInfo);
     
     compiler.processXfbPassthrough();
-    compiler.finalize();
+    return compiler.finalize();
   }
 
 

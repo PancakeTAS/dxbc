@@ -7,6 +7,8 @@
 #include "dxbc_reader.h"
 #include "dxbc_util.h"
 
+#include "spirv_code_buffer.h"
+
 #include <optional>
 
 // References used for figuring out DXBC:
@@ -91,7 +93,7 @@ namespace dxvk {
      *        the compiled SPIR-V for debugging purposes.
      * \returns The compiled shader object
      */
-    void compile(
+    SpirvCodeBuffer compile(
       const DxbcModuleInfo& moduleInfo,
       const std::string&    fileName);
     
@@ -105,7 +107,7 @@ namespace dxvk {
      * \param [in] moduleInfo DXBC module info
      * \param [in] fileName SPIR-V shader name
      */
-    void compilePassthroughShader(
+    SpirvCodeBuffer compilePassthroughShader(
       const DxbcModuleInfo& moduleInfo,
       const std::string&    fileName) const;
 
