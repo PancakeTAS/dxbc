@@ -10,6 +10,10 @@ project(dxbc
 
 file(GLOB SOURCES
     "src/dxbc/*.cpp"
+    "src/spirv/*.cpp"
+    "src/util/*.cpp"
+    "src/util/com/*.cpp"
+    "src/util/log/*.cpp"
 )
 
 add_library(dxbc SHARED ${SOURCES})

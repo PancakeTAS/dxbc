@@ -2,7 +2,7 @@
 
 #include <sstream>
 
-#include "log.h"
+#include "log/log.h"
 
 #ifdef _MSC_VER
 #define METHOD_NAME __FUNCSIG__

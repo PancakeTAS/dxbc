@@ -1,15 +1,13 @@
 #include <mutex>
 #include <unordered_set>
 
-#include "com_guid.h"
+#include "com/com_guid.h"
 
-#include "../../d3d11/d3d11_interfaces.h"
+#include "dxvk_hash.h"
 
-#include "../../dxgi/dxgi_interfaces.h"
+#include "thread.h"
 
-#include "../../dxvk/dxvk_hash.h"
-
-#include "../thread.h"
+#include "log/log.h"
 
 namespace dxvk {
 

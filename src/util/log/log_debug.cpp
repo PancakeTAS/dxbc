@@ -1,4 +1,4 @@
-#include "log_debug.h"
+#include "log/log_debug.h"
 
 namespace dxvk::debug {
   
