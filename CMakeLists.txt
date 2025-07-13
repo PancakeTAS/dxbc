@@ -12,15 +12,15 @@ file(GLOB SOURCES
     "src/dxbc/*.cpp"
 )
 
-add_library(lsfg-vk SHARED ${SOURCES})
+add_library(dxbc SHARED ${SOURCES})
 
 # target
-set_target_properties(lsfg-vk PROPERTIES
+set_target_properties(dxbc PROPERTIES
     CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON)
-target_include_directories(lsfg-vk
+target_include_directories(dxbc
     PUBLIC include/dxbc
-    PUBLIC include/spirv include/util
+    PUBLIC include/spirv include/util include/dxvk
     PUBLIC include/windows)
-set_target_properties(lsfg-vk PROPERTIES
+set_target_properties(dxbc PROPERTIES
     EXPORT_COMPILE_COMMANDS ON)
