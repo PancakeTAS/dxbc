@@ -24,5 +24,5 @@ set_target_properties(dxbc PROPERTIES
 target_include_directories(dxbc
     PUBLIC include/dxbc
     PUBLIC include/spirv include/util include/dxvk)
-add_compile_options(dxbc
+target_compile_options(dxbc PRIVATE
     -fPIC)
