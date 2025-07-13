@@ -22,7 +22,7 @@ set_target_properties(dxbc PROPERTIES
     CXX_STANDARD_REQUIRED ON
     EXPORT_COMPILE_COMMANDS ON)
 target_include_directories(dxbc
-    PUBLIC include/dxbc
-    PUBLIC include/spirv include/util include/dxvk)
+    SYSTEM PUBLIC include/dxbc
+    SYSTEM PUBLIC include/spirv include/util include/dxvk)
 target_compile_options(dxbc PRIVATE
     -fPIC)
