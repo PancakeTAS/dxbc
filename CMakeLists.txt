@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.29)
 
-set(CMAKE_C_COMPILER clang)
-set(CMAKE_CXX_COMPILER clang++)
-
 project(dxbc
     VERSION 2.7.0
     DESCRIPTION "DXVK's DXBC"
