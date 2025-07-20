@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
 
 project(dxbc
-    VERSION 2.7.0
+    VERSION 2.6.2
     DESCRIPTION "DXVK's DXBC"
     LANGUAGES CXX)
 
