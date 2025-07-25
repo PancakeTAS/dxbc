@@ -22,3 +22,8 @@ target_include_directories(dxbc SYSTEM
     PUBLIC include/spirv include/util include/dxvk)
 target_compile_options(dxbc PRIVATE
     -fPIC)
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set_target_properties(dxbc PROPERTIES
+        EXPORT_COMPILE_COMMANDS ON)
+endif()
