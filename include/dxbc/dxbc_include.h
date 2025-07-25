@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vulkan/vulkan.h>
-#include <spirv/unified1/spirv.hpp>
+#include <thirdparty/spirv.hpp>
 
 #include "dxvk_limits.h"
 #include "dxvk_pipelayout.h"

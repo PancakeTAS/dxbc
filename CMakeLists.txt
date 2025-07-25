@@ -14,7 +14,6 @@ file(GLOB SOURCES
 add_library(dxbc STATIC ${SOURCES})
 
 # target
-add_subdirectory(spirv)
 set_target_properties(dxbc PROPERTIES
     CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
@@ -22,7 +21,5 @@ set_target_properties(dxbc PROPERTIES
 target_include_directories(dxbc SYSTEM
     PUBLIC include/dxbc
     PUBLIC include/spirv include/util include/dxvk)
-target_link_libraries(dxbc
-    SPIRV-Headers)
 target_compile_options(dxbc PRIVATE
     -fPIC)

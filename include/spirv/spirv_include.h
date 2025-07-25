@@ -1,7 +1,7 @@
 #pragma once
 
-#include <spirv/unified1/spirv.hpp>
-#include <spirv/unified1/GLSL.std.450.h>
+#include <thirdparty/spirv.hpp>
+#include <thirdparty/GLSL.std.450.h>
 
 #include "log/log.h"
 #include "log/log_debug.h"
